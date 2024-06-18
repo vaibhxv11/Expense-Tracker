@@ -1,11 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "../components/ui/toaster"
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
+ 
 } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,12 +19,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
-         {/* <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn> */}
+        <Toaster/>   
         {children}
         </body>
     </html>

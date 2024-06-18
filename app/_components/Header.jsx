@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import { Button } from '../../components/ui/button'
 import {useUser , UserButton} from "@clerk/nextjs"
 import Link from 'next/link'
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
 
 
   return (
-    <div className='p-5 flex justify-between items-center border shadow-sm'>
+    <div className='p-5 flex justify-between items-center border shadow-lg'>
         <Image  src={'/logo.svg'} 
         width={160} 
         height={100}

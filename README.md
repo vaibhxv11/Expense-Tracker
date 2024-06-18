@@ -41,3 +41,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 -https://www.hyperui.dev/
 -https://ui.shadcn.com/
 -lucid icons
+
+-#ORM
+-Drizzle ORM
+
+#Added this 2 scripts in package.json
+-"db:push":"npx drizzle-kit push:pg" ,
+-"db:studio":"npx drizzle-kit studio"
