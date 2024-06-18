@@ -7,13 +7,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter ,
+  DialogClose
 } from "../../../../../components/ui/dialog"
 import EmojiPicker from 'emoji-picker-react'
 import { Button } from '../../../../../components/ui/button'
 import {Input} from "../../../../../components/ui/input"
 import { useUser } from '@clerk/nextjs'
 import { Budgets } from '../../../../../utils/schema'
-import { toast } from '../../../../../components/ui/use-toast'
+import { toast } from 'sonner'
 import { db } from '../../../../../utils/dbConfig'
 function CreateBudget() {
 
@@ -37,8 +39,7 @@ function CreateBudget() {
 
     if(result)
       {
-        toast("New Budget Created");
-
+        toast('New Budget Created');
 
       }
   }
@@ -97,14 +98,20 @@ function CreateBudget() {
             />
           </div>
 
-          <Button disabled={!(name && amount)}
-          onClick={()=>onCreateBudget()}
-           className="mt-5 w-full">Creaate Budget</Button>
+        
         
          </div>
         
       </DialogDescription>
     </DialogHeader>
+    <DialogFooter className="sm:justify-start">
+          <DialogClose asChild>
+          <Button disabled={!(name && amount)}
+          onClick={()=>onCreateBudget()}
+           className="mt-5 w-full">Creaate Budget</Button>
+          </DialogClose>
+        </DialogFooter>
+
     </DialogContent>
     </Dialog>
 

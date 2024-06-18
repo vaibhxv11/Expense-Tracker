@@ -21,20 +21,39 @@ function DashboardLayout({children}) {
     checkUserBudgets();
   } , [user])
 
-  const checkUserBudgets=async ()=>{
-    const result=await db.select()
-    .from(Budgets)
-    .where(eq(Budgets.createdBy.user?.primaryEmailaddress?.emailAddress))
+  // const checkUserBudgets=async ()=>{
+  //   const result=await db.select()
+  //   .from(Budgets)
+  //   .where(eq(Budgets.createdBy.user?.primaryEmailaddress?.emailAddress))
+  //   .execute();
+  //   console.log(result)
 
-    console.log(result)
+  //   if(result?.length==0)
+  //     {
+  //     router.replace('/dashboard/budgets')
 
-    if(result?.length==0)
-      {
-      router.replace('/dashboard/budgets')
+  //   }
 
+  // }
+
+  const checkUserBudgets = async (userEmail) => {
+    try {
+      const result = await db.select()
+        .from(Budgets)
+        .where(eq(Budgets.createdBy, userEmail))
+        .execute(); // Ensure execute is called if required by your ORM
+     
+        if(result?.length==0)
+           {
+             router.replace('/dashboard/budgets')
+        
+           }
+      return result;
+    } catch (error) {
+      console.error('Error fetching budgets:', error);
+      return [];
     }
-
-  }
+  };
 
 
   return (
