@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from '../../components/ui/button'
 import {useUser , UserButton} from "@clerk/nextjs"
@@ -7,6 +7,9 @@ import Link from 'next/link'
 const Header = () => {
    
     const {user , isSignedIn}=useUser();
+    useEffect(()=>{
+      console.log(isSignedIn)
+    })
 
 
   return (
@@ -17,8 +20,8 @@ const Header = () => {
         alt='logo'/>
 
         {
-            isSignedIn ? <UserButton/> : 
-            <Link href={"/sign-in"}>
+            isSignedIn ? ( <UserButton afterSignOutUrl='/' />  )
+            : <Link href={"/sign-in"}>
             <Button>Get Started </Button>
             </Link>
         }

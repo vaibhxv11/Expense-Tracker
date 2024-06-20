@@ -24,6 +24,7 @@ import {  Trash } from 'lucide-react'
 import { toast } from 'sonner'
 import { ArrowLeft } from 'lucide-react'
 import EditBudget from "../_components/EditBudget"
+
 function ExpensesScreen({params}) {
 
   const { user } = useUser()
@@ -35,7 +36,7 @@ function ExpensesScreen({params}) {
     
      user && getBudgetInfo()
      
-  } , [params])
+  } , [params , user])
 
   const getBudgetInfo=async ()=>{
     const query =  db.select({
@@ -103,7 +104,7 @@ function ExpensesScreen({params}) {
         <EditBudget  budgetInfo={budgetInfo} refreshData={()=> getBudgetInfo()} />
          
              <AlertDialog>
-  <AlertDialogTrigger asChilld>
+  <AlertDialogTrigger asChild>
   <Button className="flex gap-2" variant="destructive"> 
   <Trash/> Delete</Button>
   </AlertDialogTrigger>
