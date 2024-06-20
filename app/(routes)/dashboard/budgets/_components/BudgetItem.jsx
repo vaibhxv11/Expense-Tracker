@@ -27,7 +27,7 @@ function BudgetItem({budget}) {
                 <h2 className='text-sm text-gray-500'>{budget.totalItem}</h2>
             </div>
         </div>
-        <h2 className='font-bold text-primary text-lg'> Rs.{budget.amount} </h2>
+        <h2 className='font-bold text-primary text-lg'> ₹{budget.amount} </h2>
         </div>
          
         <div className='mt-5'> 

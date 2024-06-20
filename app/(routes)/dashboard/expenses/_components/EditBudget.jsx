@@ -16,7 +16,10 @@ import {
     DialogClose
   } from "../../../../../components/ui/dialog"
 import { Budgets } from '../../../../../utils/schema'
-function EditBudget({budgetInfo}) {
+import { db } from '../../../../../utils/dbConfig'
+import { eq } from 'drizzle-orm'
+import { toast } from 'sonner'
+function EditBudget({budgetInfo , refreshData}) {
 
     console.log(budgetInfo);
 
@@ -27,22 +30,25 @@ function EditBudget({budgetInfo}) {
     const [amount , setAmount] =useState();
     const  {user}=useUser();
 
-    useEffect(()=>(
-        id(budgetInfo){
-            budgetInfo?.name ,
-            budgetInfo?.amount ,
-            setEmojiIcon(budgetInfo?.icon)
-        }))
+    useEffect(()=>{
 
-        }
+        if(budgetInfo){
+         setEmojiIcon(budgetInfo?.icon) ,
+            setName(budgetInfo?.name) ,
+           setAmount(budgetInfo?.amount) 
+           
+        } 
+
+        } , [budgetInfo])
        
 
-    const onUpdateBudget=async ()=>{
+    const onUpdateBudget=async()=>{
         const result =await db.update(Budgets).set({
             name:name ,
             amount:amount ,
             icon:emojiIcon,
-        }).where(eq(Budgets.id , budgetInfo.id))
+        })
+        .where(eq(Budgets.id , budgetInfo.id))
         .returning();
 
         if(result){
