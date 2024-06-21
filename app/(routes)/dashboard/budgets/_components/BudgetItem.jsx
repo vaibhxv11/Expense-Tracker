@@ -43,7 +43,10 @@ function BudgetItem({budget}) {
             <div className='w-full bg-slate-300 h-2 rounded-full'>
              <div className='w-full bg-primary h-2 rounded-full'
              style={{
-                width:`${calculateProgressPerc()}%`
+                width:`${calculateProgressPerc()}%`,
+                position: 'absolute',
+                
+                
              }}>
 
                     </div>

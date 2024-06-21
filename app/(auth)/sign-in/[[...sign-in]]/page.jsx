@@ -31,12 +31,11 @@ export default function Page() {
         </a>
 
         <h2 class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-          Welcome to Squid 🦑
+          Welcome to WalletWise💹
         </h2>
 
         <p class="mt-4 leading-relaxed text-white/90">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-          quibusdam aperiam voluptatum.
+        Sign in to manage your finances and stay on top of your budget!
         </p>
       </div>
     </section>
