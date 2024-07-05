@@ -27,10 +27,10 @@ const Hero = () => {
       </div>
     </div>
 
-    <Image  src={'/dashboard.jpg'} 
-    className='-mt-32 '
-        width={1200} 
-        height={700}
+    <Image  src={'/dashboard.png'} 
+    className='-mt-32 pb-20 '
+        width={1400} 
+        height={600}
         alt='dashboard'/> 
   </section>
     

@@ -28,12 +28,7 @@ const SideNav = () => {
             icon: ReceiptText,
             path: '/dashboard/expenses'
         },
-        {
-            id: 4,
-            name: 'Upgrade',
-            icon: ShieldCheck,
-            path: '/dashboard/upgrade'
-        }
+       
     ]
 
     // Get the current path
