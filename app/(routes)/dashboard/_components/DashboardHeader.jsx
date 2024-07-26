@@ -14,7 +14,7 @@ function DashboardHeader() {
   return (
     <div className='p-5 shadow-sm border-b flex justify-between items-center'>
        <SuprSendInbox
-        workspaceKey={process.env.NEXT_PUBLIC_SUPRSEND_WORKSPACE_KEY}
+        workspaceKey="xpLyV4ZCOO1PxLqHrd0S"
         subscriberId="frVOEulH7f16DgmSLgtv9zUTq-EmgtZ6d6fxY5mUtAQ"
         distinctId="frVOEulH7f16DgmSLgtv9zUTq-EmgtZ6d6fxY5mUtAQ"
        
